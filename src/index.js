@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { AlchemyAccountProvider } from '@account-kit/react';
 import { createConfig } from "@account-kit/react";
 import { QueryClient } from "@tanstack/react-query";
-import { polygonAmoy, sepolia } from "@account-kit/infra";
+import { polygonAmoy } from "@account-kit/infra";
 
 const uiConfig = {
   illustrationStyle: "outline",

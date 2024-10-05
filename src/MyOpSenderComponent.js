@@ -3,9 +3,10 @@ import {
   useSendUserOperation,
   useSmartAccountClient,
 } from "@account-kit/react";
+import { keccak256 } from "viem";
  
 export default function MyOpSenderComponent() {
-  const { client } = useSmartAccountClient({ type: "LightAccount" });
+  const { client } = useSmartAccountClient({ type: "LightAccount", accountParams: {salt: keccak256('<email_address>')} });
  
   const { sendUserOperation, isSendingUserOperation } = useSendUserOperation({
     client,
@@ -20,12 +21,10 @@ export default function MyOpSenderComponent() {
       // [optional] Do something with the error
     },
   });
- 
+
   return (
     <div>
-      <div>
-        <span>{client?.account?.address}</span>
-      </div>
+      <div>{client?.account?.address}</div>
       <button
         onClick={() =>
           sendUserOperation({

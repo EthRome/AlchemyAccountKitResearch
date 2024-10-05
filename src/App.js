@@ -25,7 +25,7 @@ function App() {
           >
             Log out
           </button>
-          <MyOpSenderComponent />
+          <MyOpSenderComponent/>
         </div>
       ) : (
         <button className="btn btn-primary" onClick={openAuthModal}>
