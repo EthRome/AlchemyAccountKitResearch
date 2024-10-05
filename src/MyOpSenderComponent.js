@@ -12,22 +12,27 @@ export default function MyOpSenderComponent() {
     // optional parameter that will wait for the transaction to be mined before returning
     waitForTxn: true,
     onSuccess: ({ hash, request }) => {
+      console.log(hash, request);
       // [optional] Do something with the hash and request
     },
     onError: (error) => {
+      console.log(error);
       // [optional] Do something with the error
     },
   });
  
   return (
     <div>
+      <div>
+        <span>{client?.account?.address}</span>
+      </div>
       <button
         onClick={() =>
           sendUserOperation({
             uo: {
-              target: "0xTARGET_ADDRESS",
+              target: "0x2F5D0efe0B3a48e4C83E2722dE7f425B31aae12B",
               data: "0x",
-              value: 0n,
+              value: 10,
             },
           })
         }

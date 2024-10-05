@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { AlchemyAccountProvider } from '@account-kit/react';
 import { createConfig } from "@account-kit/react";
 import { QueryClient } from "@tanstack/react-query";
-import { sepolia } from "@account-kit/infra";
+import { polygonAmoy, sepolia } from "@account-kit/infra";
 
 const uiConfig = {
   illustrationStyle: "outline",
@@ -19,14 +19,15 @@ const uiConfig = {
 export const config = createConfig(
   {
     // alchemy config
-    apiKey: "Xpmv9Ti0-dw5ouaB9tljReRlsxhHsL9c", // TODO: add your Alchemy API key - setup your app and embedded account config in the alchemy dashboard (https://dashboard.alchemy.com/accounts)
-    chain: sepolia, // TODO: specify your preferred chain here and update imports from @account-kit/infra
+    apiKey: "zVn9SpYynKkWxaxFm8LfAblXN2ICx1fB", // TODO: add your Alchemy API key - setup your app and embedded account config in the alchemy dashboard (https://dashboard.alchemy.com/accounts)
+    chain: polygonAmoy, // TODO: specify your preferred chain here and update imports from @account-kit/infra
     ssr: true, // Defers hydration of the account state to the client after the initial mount solving any inconsistencies between server and client state (read more here: https://accountkit.alchemy.com/react/ssr)
     transport: {
       config: {
-        apiKey: "Xpmv9Ti0-dw5ouaB9tljReRlsxhHsL9c"
+        apiKey: "zVn9SpYynKkWxaxFm8LfAblXN2ICx1fB"
       },
     },
+    policyId: 'f04b7a6e-6351-4d0d-b4ff-0ed270f649fe'
   },
   uiConfig
 );
